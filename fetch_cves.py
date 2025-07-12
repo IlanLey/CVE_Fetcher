@@ -1,32 +1,43 @@
 import requests
 import json
 from datetime import datetime, timedelta, date
+import csv
 
-# Get Today and Yesterdays Date
+# Get today and yesterdays date
 today = date.today()
 yesterday = today - timedelta(days=1)
 
 def fetch_daily_cves():
     print("Fetching Zero Day Vulnerabilities...")
 
-    # National Vulnerability API Request URL
+    # National vulnerability API request URL
     url = f"https://services.nvd.nist.gov/rest/json/cves/2.0/?pubStartDate={yesterday}T00:00:00.000&pubEndDate={today}T00:00:00.000"
 
     try:
-        # Get Response
+        # Get response
         response = requests.get(url)
         
-        # Check Response Status Code
+        # Check response status code
         if response.status_code == 200:
             print("Response Success!")
             
-            # Prints API Data
+            # Uses JSON data and gets all the vulnerabilities 
             data = response.json()
-            print(data)
-
+            cve = data.get("vulnerabilities", [])
             
+            # Print formatted CVE JSON data
+            print(json.dumps(cve, indent=2))
 
+            with open("daily_cve.csv", "w") as file:
+
+                # Create writer for the CSV file and add header
+                writer = csv.writer(file)
+                writer.writerow(["CSV", "Description"])
                 
+                # Testing to see if the ID's print
+                for vul in cve:
+                    print(vul['cve']['id'])
+
 
         else:
             print("Error Code:", response.status_code)
