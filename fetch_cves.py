@@ -5,97 +5,56 @@ import re
 from datetime import datetime, timedelta, date
 
 KEYWORDS = [
-    # Communication / Collaboration
-    "Zoom", "Slack", "Microsoft Teams", "Skype", "Google Meet", "Webex", "Discord",
+    # Critical Web Browsers (Massive attack surface)
+    "Google Chrome", "Microsoft Edge", "Mozilla Firefox",
 
-    # Web Browsers (Critical for corporate security)
-    "Google Chrome", "Microsoft Edge", "Mozilla Firefox", "Internet Explorer", "Safari",
-
-    # Productivity Suites (balanced specificity)
-    "Microsoft Office", "Microsoft Word", "Microsoft Excel", "Microsoft PowerPoint", "Microsoft Outlook",
-    "Google Workspace", "Google Docs", "Google Sheets", "Gmail",
-
-    # File Sharing / Cloud Storage
-    "Dropbox", "Box.com", "Google Drive", "OneDrive", "SharePoint",
-
-    # Email Security / Gateways
-    "Proofpoint", "Mimecast", "Barracuda", "Cisco Email Security", "Avanan",
-
-    # Endpoint Protection / Antivirus / EDR
-    "CrowdStrike", "CrowdStrike Falcon", "SentinelOne", "Sophos", "McAfee", "Symantec",
-    "Bitdefender", "Trend Micro", "Carbon Black", "ESET NOD32", "ESET Internet Security", "ESET Endpoint",
+    # Core Microsoft Infrastructure
+    "Microsoft Windows", "Windows Server", "Microsoft Office", "Microsoft Outlook",
+    "Microsoft Active Directory", "Azure Active Directory", "Microsoft Exchange",
     "Windows Defender", "Microsoft Defender",
 
+    # Linux Distributions & Operating Systems
+    "Ubuntu", "Debian", "Red Hat", "Kali Linux",
+
+    # Endpoint Protection / Antivirus / EDR
+    "CrowdStrike", "SentinelOne", "Bitdefender",
+
     # Network Security / Firewalls
-    "Palo Alto", "Palo Alto Networks", "Fortinet", "FortiGate", "Cisco ASA", "Cisco Umbrella",
-    "SonicWall", "Check Point", "pfSense", "Akamai", "Cloudflare",
+    "Palo Alto", "Palo Alto Networks", "Fortinet", "FortiGate", "Cisco Umbrella",
+    "Check Point", "Akamai", "Cloudflare",
 
     # SIEM / Monitoring / Logging
-    "Splunk", "Elasticsearch", "Logstash", "Kibana", "Graylog", "IBM QRadar",
-    "ArcSight", "Sumo Logic", "LogRhythm", "Google Chronicle", "BindPlane",
-    "Microsoft Sentinel",
+    "Google Chronicle", "Google SecOps",
 
     # Identity & Access Management
-    "Okta", "Duo Security", "Ping Identity", "Microsoft Active Directory", "Azure Active Directory",
-    "CyberArk", "Silverfort", "Auth0",
+    "Okta", "Duo Security", "CyberArk", "Silverfort",
 
     # DLP / SASE / Cloud Security
-    "Netskope", "Prisma Cloud", "Zscaler", "Forcepoint", "Lookout",
+    "Netskope", "Prisma Cloud", "Zscaler",
+
+    # Email Security / Gateways
+    "Mimecast", "Avanan",
 
     # Vulnerability Management / Pentest Tools
-    "Rapid7", "Nessus", "Tenable", "Qualys", "Burp Suite", "Metasploit", "Nmap", "OpenVAS",
+    "Rapid7",
 
     # VPN / Remote Access
-    "Cisco AnyConnect", "FortiClient", "GlobalProtect", "Pulse Secure", "OpenVPN",
+    "Cisco AnyConnect", "FortiClient",
 
-    # Cloud Platforms
+    # Critical Cloud Platforms
     "AWS", "Amazon Web Services", "Microsoft Azure", "Google Cloud", "Oracle Cloud",
 
-    # DevOps / CI-CD (Enterprise focused)
-    "Jenkins", "GitLab", "GitHub", "Bitbucket", "Docker", "Kubernetes",
-    "Ansible", "Terraform", "HashiCorp Vault",
+    # Core Network Infrastructure
+    "Cisco", "VMware", "Apache HTTP",
 
-    # Programming Languages & Runtimes (Corporate relevant)
-    "Java", "JavaScript", "Python", "Node.js", ".NET", "C#",
+    # Essential Databases
+    "Microsoft SQL Server", "Oracle Database", "MySQL", "PostgreSQL",
 
-    # Enterprise PHP Applications (instead of generic "PHP")
-    "WordPress", "Drupal", "Joomla", "Magento", "PrestaShop", "phpMyAdmin",
+    # Key Enterprise Applications
+    "ServiceNow", "SharePoint",
 
-    # Version Control (Corporate tools)
-    "GitHub Actions", "GitLab CI", "Azure DevOps",
-
-    # Web Frameworks & Libraries (Enterprise focused)
-    "Spring Boot", "ASP.NET", "Django", "React", "Angular",
-
-    # Package Managers & Build Tools
-    "Maven", "Gradle", "npm", "NuGet",
-
-    # Development Tools & IDEs (Corporate relevant)
-    "Visual Studio Code", "Visual Studio", "IntelliJ IDEA", "Eclipse",
-
-    # Web Servers / Reverse Proxies
-    "Apache HTTP", "Nginx", "Microsoft IIS", "HAProxy",
-
-    # Databases (Enterprise focused)
-    "MySQL", "PostgreSQL", "MongoDB", "Oracle Database", "SQL Server", "Redis", "Elasticsearch",
-
-    # Backup & Recovery
-    "Veeam", "Commvault", "Acronis", "Datto",
-
-    # MDM
-    "Jamf", "Microsoft Intune", "AirWatch", "MobileIron",
-
-    # Ticketing / ITSM
-    "ServiceNow", "Jira", "Zendesk", "Freshservice",
-
-    # Enterprise Software & ERP
-    "SAP", "Oracle ERP", "Microsoft Dynamics", "Salesforce",
-
-    # Virtualization & Infrastructure
-    "VMware", "Hyper-V", "Citrix XenApp", "Citrix XenDesktop",
-
-    # Other critical enterprise tools
-    "Ivanti", "SolarWinds", "TeamViewer", "Adobe Acrobat", "Adobe Flash"
+    # Critical Programming Runtimes
+    "Java", ".NET", "Python",
 ]
 
 def fetch_daily_cves():
