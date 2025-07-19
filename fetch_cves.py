@@ -51,11 +51,11 @@ KEYWORDS = [
     "Ansible", "Terraform", "ArgoCD", "HashiCorp Vault",
 
     # Programming Languages & Runtimes
-    "Java", "JavaScript", "Python", "Node.js", "PHP", "Ruby", "Go", "Rust",
+    "Java", "JavaScript", "Python", "Node.js", "PHP", "Ruby", "Golang", "Rust",
     "C++", "C#", ".NET", "TypeScript", "Swift", "Kotlin", "Scala",
 
     # Git Libraries & Version Control
-    "Git", "GitHub Actions", "GitLab CI", "libgit2", "JGit", "GitPython",
+    "GitHub Actions", "GitLab CI", "libgit2", "JGit", "GitPython",
     "Subversion", "SVN", "Mercurial",
 
     # Web Frameworks & Libraries
