@@ -55,6 +55,10 @@ KEYWORDS = [
 
     # Critical Programming Runtimes
     "Java", ".NET", "Python",
+
+    # AI Platforms & Agents
+    "OpenAI", "ChatGPT", "GPT-4", "GPT-3", "Claude", "Anthropic",
+    "Google Gemini", "Microsoft Copilot", "GitHub Copilot",
 ]
 
 def fetch_daily_cves():
