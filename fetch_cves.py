@@ -5,67 +5,67 @@ from datetime import datetime, timedelta, date
 
 KEYWORDS = [
     # Communication / Collaboration
-    "Zoom", "Slack", "Microsoft Teams", "Skype", "Google Meet", "Webex",
+    "Zoom", "Slack", "Microsoft Teams", "Skype", "Google Meet", "Webex", "Discord",
 
-    # Productivity Suites
-    "Microsoft Office", "Word", "Excel", "PowerPoint", "Outlook",
-    "Google Workspace", "Docs", "Sheets", "Gmail",
+    # Productivity Suites (balanced specificity)
+    "Microsoft Office", "Microsoft Word", "Microsoft Excel", "Microsoft PowerPoint", "Microsoft Outlook",
+    "Google Workspace", "Google Docs", "Google Sheets", "Gmail",
 
     # File Sharing / Cloud Storage
-    "Dropbox", "Box", "Google Drive", "OneDrive",
+    "Dropbox", "Box.com", "Google Drive", "OneDrive", "SharePoint",
 
     # Email Security / Gateways
     "Proofpoint", "Mimecast", "Barracuda", "Cisco Email Security", "Avanan",
 
     # Endpoint Protection / Antivirus / EDR
-    "CrowdStrike", "SentinelOne", "Sophos", "McAfee", "Symantec",
-    "Bitdefender", "Trend Micro", "Carbon Black", "ESET",
+    "CrowdStrike", "CrowdStrike Falcon", "SentinelOne", "Sophos", "McAfee", "Symantec",
+    "Bitdefender", "Trend Micro", "Carbon Black", "ESET NOD32", "ESET Internet Security", "ESET Endpoint",
 
     # Network Security / Firewalls
-    "Palo Alto", "Fortinet", "FortiGate", "Cisco ASA", "Cisco Umbrella",
+    "Palo Alto", "Palo Alto Networks", "Fortinet", "FortiGate", "Cisco ASA", "Cisco Umbrella",
     "SonicWall", "Check Point", "pfSense", "Akamai",
 
     # SIEM / Monitoring / Logging
-    "Splunk", "Elastic", "Logstash", "Kibana", "Graylog", "IBM QRadar",
-    "ArcSight", "Sumo Logic", "LogRhythm", "Google SecOps", "BindPlane",
+    "Splunk", "Elasticsearch", "Logstash", "Kibana", "Graylog", "IBM QRadar",
+    "ArcSight", "Sumo Logic", "LogRhythm", "Google Chronicle", "BindPlane",
 
     # Identity & Access Management
-    "Okta", "Duo", "Ping Identity", "Microsoft Active Directory", "Azure AD",
-    "LDAP", "CyberArk", "Silverfort", "Reco AI",
+    "Okta", "Duo Security", "Ping Identity", "Microsoft Active Directory", "Azure Active Directory",
+    "CyberArk", "Silverfort",
 
     # DLP / SASE / Cloud Security
     "Netskope", "Prisma Cloud", "Zscaler", "Forcepoint", "Lookout",
 
     # Vulnerability Management / Pentest Tools
-    "Rapid7", "Nessus", "Qualys", "Burp Suite", "Metasploit", "Nmap", "OpenVAS",
+    "Rapid7", "Nessus", "Tenable", "Qualys", "Burp Suite", "Metasploit", "Nmap", "OpenVAS",
 
     # VPN / Remote Access
-    "Cisco AnyConnect", "Fortinet VPN", "Palo Alto GlobalProtect", "Pulse Secure", "OpenVPN",
+    "Cisco AnyConnect", "FortiClient", "GlobalProtect", "Pulse Secure", "OpenVPN",
 
     # Cloud Platforms
-    "AWS", "Amazon Web Services", "Azure", "Google Cloud", "GCP",
+    "AWS", "Amazon Web Services", "Microsoft Azure", "Google Cloud", "Oracle Cloud",
 
     # DevOps / CI-CD
     "Jenkins", "GitLab", "GitHub", "Bitbucket", "Docker", "Kubernetes",
-    "Ansible", "Terraform", "ArgoCD", "Vault",
+    "Ansible", "Terraform", "ArgoCD", "HashiCorp Vault",
 
     # Web Servers / Reverse Proxies
-    "Apache", "Nginx", "IIS", "HAProxy", "Envoy",
+    "Apache HTTP", "Nginx", "Microsoft IIS", "HAProxy",
 
     # Databases
-    "MySQL", "PostgreSQL", "MongoDB", "Oracle", "SQL Server", "Redis", "ElasticSearch",
+    "MySQL", "PostgreSQL", "MongoDB", "Oracle Database", "SQL Server", "Redis", "Elasticsearch",
 
     # Backup & Recovery
     "Veeam", "Commvault", "Acronis", "Datto",
 
     # MDM
-    "Jamf", "Intune", "AirWatch", "MobileIron",
+    "Jamf", "Microsoft Intune", "AirWatch", "MobileIron",
 
     # Ticketing / ITSM
     "ServiceNow", "Jira", "Zendesk", "Freshservice",
 
-    # Other popular or enterprise-used tools
-    "Ivanti", "SolarWinds", "Citrix", "TeamViewer", "GoToMeeting"
+    # Other popular enterprise tools
+    "Ivanti", "SolarWinds", "Citrix", "TeamViewer"
 ]
 
 def fetch_daily_cves():
