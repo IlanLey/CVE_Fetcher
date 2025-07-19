@@ -1,6 +1,7 @@
 import requests
 import csv
 import json
+import re
 from datetime import datetime, timedelta, date
 
 KEYWORDS = [
@@ -123,7 +124,10 @@ def fetch_daily_cves():
                         break
 
                 for word in KEYWORDS:
-                    if word.lower() in description.lower():
+                    # Use regex for exact word matching (case-insensitive)
+                    # \b ensures word boundaries, so "Go" won't match "goform"
+                    pattern = r'\b' + re.escape(word) + r'\b'
+                    if re.search(pattern, description, re.IGNORECASE):
 
                         affected_prod = word
 

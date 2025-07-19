@@ -1,48 +1,4 @@
 CVE ID,Published Date,CVSS,Severity,Description,Affected Products,Exploitability Score,References
-CVE-2025-52162,2025-07-18T17:15:44.247,6.5,MEDIUM,agorum Software GmbH Agorum core open v11.9.2 & v11.10.1 was discovered to contain an XML External Entity (XXE) via the RSSReader endpoint. This vulnerability allows attackers to access sensitive data via providing a crafted XML input.,Go,3.9,"http://agorum.com
-https://herolab.usd.de/security-advisories/usd-2025-0024/"
-CVE-2025-7792,2025-07-18T17:15:45.020,8.8,HIGH,A vulnerability was found in Tenda FH451 1.0.0.9. It has been rated as critical. This issue affects the function formSafeEmailFilter of the file /goform/SafeEmailFilter. The manipulation of the argument page leads to stack-based buffer overflow. The attack may be initiated remotely. The exploit has been disclosed to the public and may be used.,Go,2.8,"https://github.com/panda666-888/vuls/blob/main/tenda/fh451/formSafeEmailFilter.md
-https://github.com/panda666-888/vuls/blob/main/tenda/fh451/formSafeEmailFilter.md#poc
-https://vuldb.com/?ctiid.316853
-https://vuldb.com/?id.316853
-https://vuldb.com/?submit.616316
-https://www.tenda.com.cn/"
-CVE-2025-7793,2025-07-18T17:15:45.263,8.8,HIGH,A vulnerability classified as critical has been found in Tenda FH451 1.0.0.9. Affected is the function formWebTypeLibrary of the file /goform/webtypelibrary. The manipulation of the argument webSiteId leads to stack-based buffer overflow. It is possible to launch the attack remotely. The exploit has been disclosed to the public and may be used.,Go,2.8,"https://github.com/panda666-888/vuls/blob/main/tenda/fh451/formWebTypeLibrary.md
-https://github.com/panda666-888/vuls/blob/main/tenda/fh451/formWebTypeLibrary.md#poc
-https://vuldb.com/?ctiid.316854
-https://vuldb.com/?id.316854
-https://vuldb.com/?submit.616317
-https://www.tenda.com.cn/"
-CVE-2025-7794,2025-07-18T17:15:45.500,8.8,HIGH,A vulnerability classified as critical was found in Tenda FH451 1.0.0.9. Affected by this vulnerability is the function fromNatStaticSetting of the file /goform/NatStaticSetting. The manipulation of the argument page leads to stack-based buffer overflow. The attack can be launched remotely. The exploit has been disclosed to the public and may be used.,Go,2.8,"https://github.com/panda666-888/vuls/blob/main/tenda/fh451/fromNatStaticSetting.md
-https://github.com/panda666-888/vuls/blob/main/tenda/fh451/fromNatStaticSetting.md#poc
-https://vuldb.com/?ctiid.316855
-https://vuldb.com/?id.316855
-https://vuldb.com/?submit.616318
-https://www.tenda.com.cn/"
-CVE-2025-52164,2025-07-18T18:15:24.177,8.2,HIGH,Software GmbH Agorum core open v11.9.2 & v11.10.1 was discovered to store credentials in plaintext.,Go,3.9,"http://agorum.com
-https://herolab.usd.de/security-advisories/usd-2025-0023/"
-CVE-2025-52166,2025-07-18T18:15:24.310,6.5,MEDIUM,Incorrect access control in Software GmbH Agorum core open v11.9.2 & v11.10.1 allows authenticated attackers to escalate privileges to Administrator and access sensitive components and information.,Go,3.9,"http://agorum.com
-https://herolab.usd.de/usd-2025-0028/"
-CVE-2025-52168,2025-07-18T18:15:24.437,6.5,MEDIUM,Incorrect access control in the dynawebservice component of agorum Software GmbH Agorum core open v11.9.2 & v11.10.1 allows unauthenticated attackers to access arbitrary files on the system.,Go,3.9,"http://agorum.com
-https://herolab.usd.de/security-advisories/usd-2025-0022/"
-CVE-2025-7795,2025-07-18T18:15:24.963,8.8,HIGH,"A vulnerability, which was classified as critical, has been found in Tenda FH451 1.0.0.9. Affected by this issue is the function fromP2pListFilter of the file /goform/P2pListFilter. The manipulation of the argument page leads to stack-based buffer overflow. The attack may be launched remotely. The exploit has been disclosed to the public and may be used.",Go,2.8,"https://github.com/panda666-888/vuls/blob/main/tenda/fh451/fromP2pListFilter.md
-https://github.com/panda666-888/vuls/blob/main/tenda/fh451/fromP2pListFilter.md#poc
-https://vuldb.com/?ctiid.316856
-https://vuldb.com/?id.316856
-https://vuldb.com/?submit.616344
-https://www.tenda.com.cn/"
-CVE-2025-7796,2025-07-18T18:15:25.173,8.8,HIGH,"A vulnerability, which was classified as critical, was found in Tenda FH451 1.0.0.9. This affects the function fromPptpUserAdd of the file /goform/PPTPDClient. The manipulation of the argument Username leads to stack-based buffer overflow. It is possible to initiate the attack remotely. The exploit has been disclosed to the public and may be used.",Go,2.8,"https://github.com/panda666-888/vuls/blob/main/tenda/fh451/fromPptpUserAdd.md
-https://github.com/panda666-888/vuls/blob/main/tenda/fh451/fromPptpUserAdd.md#poc
-https://vuldb.com/?ctiid.316857
-https://vuldb.com/?id.316857
-https://vuldb.com/?submit.616345
-https://www.tenda.com.cn/"
-CVE-2025-33014,2025-07-18T19:15:22.830,5.4,MEDIUM,IBM Sterling B2B Integrator and IBM Sterling File Gateway 6.0.0.0 through 6.1.2.7 and 6.2.0.0 through 6.2.0.4 uses a web link with untrusted references to an external site. A remote attacker could exploit this vulnerability to expose sensitive information or perform unauthorized actions on the victims’ web browser.,Rust,2.3,https://www.ibm.com/support/pages/node/7240065
-CVE-2025-52163,2025-07-18T19:15:24.220,6.5,MEDIUM,A Server-Side Request Forgery (SSRF) in the component TunnelServlet of agorum Software GmbH Agorum core open v11.9.2 & v11.10.1 allows attackers to forcefully initiate connections to arbitrary internal and external resources via a crafted request. This can lead to sensitive data exposure.,Go,3.9,"http://agorum.com
-https://herolab.usd.de/security-advisories/usd-2025-0025/"
-CVE-2025-52169,2025-07-18T19:15:24.940,7.1,HIGH,agorum Software GmbH Agorum core open v11.9.2 & v11.10.1 was discovered to contain a reflected cross-site scripting (XSS) vulnerability.,Go,2.8,"http://agorum.com
-https://herolab.usd.de/security-advisories/usd-2025-0026/
-https://herolab.usd.de/security-advisories/usd-2025-0026/"
 CVE-2025-7800,2025-07-18T19:15:25.820,3.5,LOW,"A vulnerability classified as problematic was found in cgpandey hotelmis up to c572198e6c4780fccc63b1d3e8f3f72f825fc94e. This vulnerability affects unknown code of the file admin.php of the component HTTP GET Request Handler. The manipulation of the argument Search leads to cross site scripting. The attack can be initiated remotely. This product is using a rolling release to provide continious delivery. Therefore, no version details for affected nor updated releases are available.",PHP,2.1,"https://vuldb.com/?ctiid.316864
 https://vuldb.com/?id.316864
 https://vuldb.com/?submit.616838"
@@ -54,12 +10,6 @@ https://vuldb.com/?submit.616740"
 CVE-2025-7803,2025-07-18T20:15:25.257,3.5,LOW,"A vulnerability was found in descreekert wx-discuz up to 12bd4745c63ec203cb32119bf77ead4a923bf277. It has been classified as problematic. This affects the function validToken of the file /wx.php. The manipulation of the argument echostr leads to cross site scripting. It is possible to initiate the attack remotely. This product takes the approach of rolling releases to provide continious delivery. Therefore, version details for affected and updated releases are not available.",PHP,2.1,"https://vuldb.com/?ctiid.316869
 https://vuldb.com/?id.316869
 https://vuldb.com/?submit.616885"
-CVE-2025-7805,2025-07-18T20:15:25.430,8.8,HIGH,A vulnerability classified as critical has been found in Tenda FH451 1.0.0.9. This affects the function fromPptpUserSetting of the file /goform/PPTPUserSetting. The manipulation of the argument delno leads to stack-based buffer overflow. It is possible to initiate the attack remotely. The exploit has been disclosed to the public and may be used.,Go,2.8,"https://github.com/panda666-888/vuls/blob/main/tenda/fh451/fromPptpUserSetting.md
-https://github.com/panda666-888/vuls/blob/main/tenda/fh451/fromPptpUserSetting.md#poc
-https://vuldb.com/?ctiid.316881
-https://vuldb.com/?id.316881
-https://vuldb.com/?submit.616347
-https://www.tenda.com.cn/"
 CVE-2025-7806,2025-07-18T21:15:25.153,8.8,HIGH,A vulnerability classified as critical was found in Tenda FH451 1.0.0.9. This vulnerability affects the function fromSafeClientFilter of the file /goform/SafeClientFilter. The manipulation of the argument Go/page leads to stack-based buffer overflow. The attack can be initiated remotely. The exploit has been disclosed to the public and may be used.,Go,2.8,"https://github.com/panda666-888/vuls/blob/main/tenda/fh451/fromSafeClientFilter_Go.md
 https://github.com/panda666-888/vuls/blob/main/tenda/fh451/fromSafeClientFilter_page.md
 https://vuldb.com/?ctiid.316882
@@ -85,11 +35,6 @@ CVE-2025-27209,2025-07-18T23:15:23.190,N/A,N/A,"The V8 release used in Node.js v
 CVE-2025-27210,2025-07-18T23:15:23.343,N/A,N/A,"An incomplete fix has been identified for CVE-2025-23084 in Node.js, specifically affecting Windows device names like CON, PRN, and AUX. 
 
 This vulnerability affects Windows users of `path.join` API.",Node.js,N/A,https://nodejs.org/en/blog/vulnerability/july-2025-security-releases
-CVE-2025-7395,2025-07-18T23:15:23.657,N/A,N/A,"A certificate verification error in wolfSSL when building with the WOLFSSL_SYS_CA_CERTS and WOLFSSL_APPLE_NATIVE_CERT_VALIDATION options results in the wolfSSL
- client failing to properly verify the server certificate's domain name,
- allowing any certificate issued by a trusted CA to be accepted regardless of the hostname.",Rust,N/A,http://github.com/wolfssl/wolfssl.git
-CVE-2025-52924,2025-07-19T03:15:22.890,4.0,MEDIUM,"In One Identity OneLogin before 2025.2.0, the SQL connection ""application name"" is set based on the value of an untrusted X-RequestId HTTP request header.",Rust,2.2,"https://oneidentity.com
-https://onelogin.service-now.com/support?id=kb_article&sys_id=59fe4c3c972a2610c90c3b0e6253afef&kb_category=a0d76d70db185340d5505eea4b96199f"
 CVE-2025-7669,2025-07-19T03:15:23.727,6.1,MEDIUM,"The Avishi WP PayPal Payment Button plugin for WordPress is vulnerable to Cross-Site Request Forgery in all versions up to, and including, 2.0. This is due to missing or incorrect nonce validation on the 'avishi-wp-paypal-payment-button/index.php' page. This makes it possible for unauthenticated attackers to update settings and inject malicious web scripts via a forged request granted they can trick a site administrator into performing an action such as clicking on a link.",PHP,2.8,"https://plugins.trac.wordpress.org/browser/avishi-wp-paypal-payment-button/trunk/index.php
 https://wordpress.org/plugins/avishi-wp-paypal-payment-button/
 https://www.wordfence.com/threat-intel/vulnerabilities/id/8416b394-28ae-41de-8784-2ae39f4d201f?source=cve"
@@ -138,12 +83,6 @@ https://www.acunetix.com/vulnerabilities/web/wordpress-plugin-work-the-flow-file
 https://www.homelab.it/index.php/2015/04/04/wordpress-work-the-flow-file-upload-vulnerability/
 https://www.rapid7.com/db/modules/exploit/unix/webapp/wp_worktheflow_upload/
 https://www.wordfence.com/threat-intel/vulnerabilities/id/eb271cc8-01ec-45eb-9d6f-efc55c7c3923?source=cve"
-CVE-2015-10139,2025-07-19T12:15:35.127,8.8,HIGH,The WPLMS theme for WordPress is vulnerable to Privilege Escalation in versions 1.5.2 to 1.8.4.1 via the 'wp_ajax_import_data' AJAX action. This makes it possible for authenticated attackers to change otherwise restricted settings and potentially create a new accessible admin account.,Scala,2.8,"https://packetstormsecurity.com/files/130291/
-https://themeforest.net/item/wplms-learning-management-system/6780226
-https://twitter.com/_wpscan_/status/564874637679820800?lang=ca
-https://wpscan.com/vulnerability/7785
-https://www.rapid7.com/db/modules/auxiliary/admin/http/wp_wplms_privilege_escalation/
-https://www.wordfence.com/threat-intel/vulnerabilities/id/6e0e8f5f-8216-4276-a810-860f9b52c447?source=cve"
 CVE-2025-7817,2025-07-19T12:15:35.497,3.5,LOW,A vulnerability has been found in PHPGurukul Apartment Visitors Management System 1.0 and classified as problematic. Affected by this vulnerability is an unknown functionality of the file /bwdates-reports.php of the component HTTP POST Request Handler. The manipulation of the argument visname leads to cross site scripting. The attack can be launched remotely. The exploit has been disclosed to the public and may be used.,PHP,2.1,"https://github.com/HieuGITLAB/my-cves/issues/5
 https://phpgurukul.com/
 https://vuldb.com/?ctiid.316921
@@ -184,8 +123,3 @@ https://github.com/n0name-yang/myCVE/issues/9
 https://vuldb.com/?ctiid.316937
 https://vuldb.com/?id.316937
 https://vuldb.com/?submit.616919"
-CVE-2025-7834,2025-07-19T16:15:30.773,4.3,MEDIUM,"A vulnerability, which was classified as problematic, was found in PHPGurukul Complaint Management System 2.0. Affected is an unknown function. The manipulation leads to cross-site request forgery. It is possible to launch the attack remotely. The exploit has been disclosed to the public and may be used.",PHP,2.8,"https://github.com/N1n3b9S/cve/issues/8
-https://phpgurukul.com/
-https://vuldb.com/?ctiid.316938
-https://vuldb.com/?id.316938
-https://vuldb.com/?submit.616888"
