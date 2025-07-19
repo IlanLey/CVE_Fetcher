@@ -73,6 +73,8 @@ def fetch_daily_cves():
         response.raise_for_status()
 
         data = response.json()
+        
+        print(f"Total CVEs found: {len(data.get('vulnerabilities', []))}")
 
         with open(f"{today}_cve.csv", "w", newline="", encoding='utf-8') as file:
             writer = csv.writer(file)
@@ -91,11 +93,14 @@ def fetch_daily_cves():
                         description = desc.get("value", "")
                         break
 
+                print(f"Processing {CVE_ID}: {description[:100]}...")  # Debug output
+
                 for word in KEYWORDS:
                     # Use regex for exact word matching (case-insensitive)
                     # \b ensures word boundaries, so "Go" won't match "goform"
                     pattern = r'\b' + re.escape(word) + r'\b'
                     if re.search(pattern, description, re.IGNORECASE):
+                        print(f"✅ MATCH found for '{word}' in {CVE_ID}")
 
                         affected_prod = word
 
