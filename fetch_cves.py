@@ -49,6 +49,26 @@ KEYWORDS = [
     "Jenkins", "GitLab", "GitHub", "Bitbucket", "Docker", "Kubernetes",
     "Ansible", "Terraform", "ArgoCD", "HashiCorp Vault",
 
+    # Programming Languages & Runtimes
+    "Java", "JavaScript", "Python", "Node.js", "PHP", "Ruby", "Go", "Rust",
+    "C++", "C#", ".NET", "TypeScript", "Swift", "Kotlin", "Scala",
+
+    # Git Libraries & Version Control
+    "Git", "GitHub Actions", "GitLab CI", "libgit2", "JGit", "GitPython",
+    "Subversion", "SVN", "Mercurial",
+
+    # Web Frameworks & Libraries
+    "React", "Angular", "Vue.js", "Express.js", "Django", "Flask", "Spring Boot",
+    "Laravel", "Ruby on Rails", "ASP.NET", "jQuery", "Bootstrap",
+
+    # Package Managers & Build Tools
+    "npm", "Yarn", "Maven", "Gradle", "pip", "Composer", "NuGet", "RubyGems",
+    "Webpack", "Babel", "Vite", "Rollup",
+
+    # Development Tools & IDEs
+    "Visual Studio Code", "IntelliJ IDEA", "Eclipse", "Xcode", "Android Studio",
+    "Sublime Text", "Atom", "Vim", "Emacs",
+
     # Web Servers / Reverse Proxies
     "Apache HTTP", "Nginx", "Microsoft IIS", "HAProxy",
 
