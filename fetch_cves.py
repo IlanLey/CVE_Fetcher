@@ -1,5 +1,6 @@
 import requests
 import csv
+import json
 from datetime import datetime, timedelta, date
 
 KEYWORDS = [
@@ -101,20 +102,40 @@ def fetch_daily_cves():
                         description = desc.get("value", "")
                         break
 
-                if any(word.lower() in description.lower() for word in KEYWORDS):
-                    cve_metrics = metrics.get("cvssMetricV31")
-                    print(cve_metrics)
+                for word in KEYWORDS:
+                    if word.lower() in description.lower():
 
-                    """
-                    If v4 exists
-                        use that
-                    else
-                        use v31
-                    """
+                        affected_prod = word
 
+                        # Get Metric Version (check if metrics exists)
+                        exploitability_score = "N/A"
+                        CVSS_score = "N/A"
+                        severity = "N/A"
+                        
+                        if metrics:
+                            cvss_metric = metrics.get("cvssMetricV31", [])
+                            
+                            # Get Exploitability Score & CVSS Score
+                            for metric_data in cvss_metric:
+                                exploitability_score = metric_data.get('exploitabilityScore', 'N/A')
+                                cvss_data = metric_data.get('cvssData', {})
+                                CVSS_score = cvss_data.get('baseScore', 'N/A')
+                                severity = cvss_data.get('baseSeverity', 'N/A')
+                                break
 
-                    # Write Exisiting Data
-                    writer.writerow([CVE_ID, published, description])
+                        # Get references
+                        references = cve.get("references", [])
+                        ref_urls = []
+                        for ref in references:
+                            if ref.get("url"):
+                                ref_urls.append(ref["url"])
+
+                        # Auto-Fit Excel/Sheets Row Height for multiline references
+                        references_str = "\n".join(ref_urls) if ref_urls else "N/A"
+
+                        # Write complete data matching CSV header
+                        writer.writerow([CVE_ID, published, CVSS_score, severity, description, affected_prod, exploitability_score, references_str])
+                        break
 
         print(f"✅ Done writing filtered CVEs to {today}.csv")
 

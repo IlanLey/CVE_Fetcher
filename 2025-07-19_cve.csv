@@ -1,0 +1,182 @@
+CVE ID,Published Date,CVSS,Severity,Description,Affected Products,Exploitability Score,References
+CVE-2025-54073,2025-07-18T16:15:30.350,7.5,HIGH,"mcp-package-docs is an MCP (Model Context Protocol) server that provides LLMs with efficient access to package documentation across multiple programming languages and language server protocol (LSP) capabilities. A command injection vulnerability exists in the `mcp-package-docs` MCP Server prior to the fix in commit cb4ad49615275379fd6f2f1cf1ec4731eec56eb9. The vulnerability is caused by the unsanitized use of input parameters within a call to `child_process.exec`, enabling an attacker to inject arbitrary system commands. Successful exploitation can lead to remote code execution under the server process's privileges. The server constructs and executes shell commands using unvalidated user input directly within command-line strings. This introduces the possibility of shell metacharacter injection (`|`, `>`, `&&`, etc.). Commit cb4ad49615275379fd6f2f1cf1ec4731eec56eb9 in version 0.1.27 contains a fix for the issue, but upgrading to 0.1.28 is recommended.",Docs,1.6,"https://equixly.com/blog/2025/03/29/mcp-server-new-security-nightmare
+https://github.com/advisories/GHSA-3q26-f695-pp76
+https://github.com/advisories/GHSA-5w57-2ccq-8w95
+https://github.com/advisories/GHSA-gjv4-ghm7-q58q
+https://github.com/sammcj/mcp-package-docs/commit/cb4ad49615275379fd6f2f1cf1ec4731eec56eb9
+https://github.com/sammcj/mcp-package-docs/releases/tag/v0.1.27
+https://github.com/sammcj/mcp-package-docs/releases/tag/v0.1.28
+https://github.com/sammcj/mcp-package-docs/security/advisories/GHSA-vf9j-h32g-2764
+https://invariantlabs.ai/blog/mcp-github-vulnerability"
+CVE-2025-7789,2025-07-18T16:15:31.487,3.7,LOW,A vulnerability was found in Xuxueli xxl-job up to 3.1.1 and classified as problematic. Affected by this issue is the function makeToken of the file src/main/java/com/xxl/job/admin/controller/IndexController.java of the component Token Generation. The manipulation leads to password hash with insufficient computational effort. The attack may be launched remotely. The complexity of an attack is rather high. The exploitation is known to be difficult. The exploit has been disclosed to the public and may be used.,Word,2.2,"https://github.com/xuxueli/xxl-job/issues/3751
+https://vuldb.com/?ctiid.316850
+https://vuldb.com/?id.316850
+https://vuldb.com/?submit.615760"
+CVE-2025-47158,2025-07-18T17:15:31.363,9.0,CRITICAL,Authentication bypass by assumed-immutable data in Azure DevOps allows an unauthorized attacker to elevate privileges over a network.,Azure,2.2,https://msrc.microsoft.com/update-guide/vulnerability/CVE-2025-47158
+CVE-2025-47995,2025-07-18T17:15:33.497,6.5,MEDIUM,Weak authentication in Azure Machine Learning allows an authorized attacker to elevate privileges over a network.,Azure,2.8,https://msrc.microsoft.com/update-guide/vulnerability/CVE-2025-47995
+CVE-2025-49746,2025-07-18T17:15:43.300,9.9,CRITICAL,Improper authorization in Azure Machine Learning allows an authorized attacker to elevate privileges over a network.,Azure,3.1,https://msrc.microsoft.com/update-guide/vulnerability/CVE-2025-49746
+CVE-2025-49747,2025-07-18T17:15:43.503,9.9,CRITICAL,Missing authorization in Azure Machine Learning allows an authorized attacker to elevate privileges over a network.,Azure,3.1,https://msrc.microsoft.com/update-guide/vulnerability/CVE-2025-49747
+CVE-2025-53901,2025-07-18T18:15:24.713,3.5,LOW,"Wasmtime is a runtime for WebAssembly. Prior to versions 24.0.4, 33.0.2, and 34.0.2, a bug in Wasmtime's implementation of the WASIp1 set of import functions can lead to a WebAssembly guest inducing a panic in the host (embedder). The specific bug is triggered by calling `path_open` after calling `fd_renumber` with either two equal argument values or a second argument being equal to a previously-closed file descriptor number value. The corrupt state introduced in `fd_renumber` will lead to the subsequent opening of a file descriptor to panic. This panic cannot introduce memory unsafety or allow WebAssembly to break outside of its sandbox, however. There is no possible heap corruption or memory unsafety from this panic. This bug is in the implementation of Wasmtime's `wasmtime-wasi` crate which provides an implementation of WASIp1. The bug requires a specially crafted call to `fd_renumber` in addition to the ability to open a subsequent file descriptor. Opening a second file descriptor is only possible when a preopened directory was provided to the guest, and this is common amongst embeddings. A panic in the host is considered a denial-of-service vector for WebAssembly embedders and is thus a security issue in Wasmtime. This bug does not affect WASIp2 and embedders using components. In accordance with Wasmtime's release process, patch releases are available as 24.0.4, 33.0.2, and 34.0.2. Users of other release of Wasmtime are recommended to move to a supported release of Wasmtime. Embedders who are using components or are not providing guest access to create more file descriptors (e.g. via a preopened filesystem directory) are not affected by this issue. Otherwise, there is no workaround at this time, and affected embeddings are recommended to update to a patched version which will not cause a panic in the host.",Box,2.1,"https://docs.wasmtime.dev/security-what-is-considered-a-security-vulnerability.html
+https://docs.wasmtime.dev/stability-release.html
+https://github.com/WebAssembly/WASI/blob/e1aa1cae4dda4c1f70f23fe11e922aae92f240a8/legacy/preview1/witx/wasi_snapshot_preview1.witx#L245-L260
+https://github.com/bytecodealliance/wasmtime/blob/037a6edadbc225decbea00a551aabf04203717d9/crates/wasi/src/preview1.rs#L1824-L1836
+https://github.com/bytecodealliance/wasmtime/security/advisories/GHSA-fm79-3f68-h2fc"
+CVE-2025-7653,2025-07-19T03:15:23.050,6.4,MEDIUM,"The EPay.bg Payments plugin for WordPress is vulnerable to Stored Cross-Site Scripting via the plugin's 'epay' shortcode in all versions up to, and including, 0.1 due to insufficient input sanitization and output escaping on user supplied attributes. This makes it possible for authenticated attackers, with contributor-level access and above, to inject arbitrary web scripts in pages that will execute whenever a user accesses an injected page.",Word,3.1,"https://plugins.svn.wordpress.org/epaybg-payments/tags/0.1/epay-payments.php
+https://www.wordfence.com/threat-intel/vulnerabilities/id/7e35e79a-4838-4ed9-bd08-80e8f9043ec4?source=cve"
+CVE-2025-7655,2025-07-19T03:15:23.223,6.4,MEDIUM,"The Live Stream Badger plugin for WordPress is vulnerable to Stored Cross-Site Scripting via the plugin's 'livestream' shortcode in all versions up to, and including, 1.4.3 due to insufficient input sanitization and output escaping on user supplied attributes. This makes it possible for authenticated attackers, with contributor-level access and above, to inject arbitrary web scripts in pages that will execute whenever a user accesses an injected page.",Word,3.1,"https://plugins.svn.wordpress.org/live-stream-badger/tags/1.4.3/shortcode/class-embedded-stream.php
+https://plugins.svn.wordpress.org/live-stream-badger/tags/1.4.3/view/class-embedded-twitch-view.php
+https://www.wordfence.com/threat-intel/vulnerabilities/id/22a30301-f409-4c53-84d7-7799fb41c25b?source=cve"
+CVE-2025-7658,2025-07-19T03:15:23.397,6.4,MEDIUM,"The Temporarily Hidden Content plugin for WordPress is vulnerable to Stored Cross-Site Scripting via the plugin's 'temphc-start' shortcode in all versions up to, and including, 1.0.6 due to insufficient input sanitization and output escaping on user supplied attributes. This makes it possible for authenticated attackers, with contributor-level access and above, to inject arbitrary web scripts in pages that will execute whenever a user accesses an injected page.",Word,3.1,"https://plugins.svn.wordpress.org/temporarily-hidden-content/trunk/includes/class-temporarily-hidden-content-public.php
+https://plugins.svn.wordpress.org/temporarily-hidden-content/trunk/templates/countdown_view.tpl
+https://www.wordfence.com/threat-intel/vulnerabilities/id/67afe49c-3560-414b-b848-b91a03bf7556?source=cve"
+CVE-2025-7661,2025-07-19T03:15:23.560,6.4,MEDIUM,"The Partnerský systém Martinus plugin for WordPress is vulnerable to Stored Cross-Site Scripting via the plugin's 'martinus' shortcode in all versions up to, and including, 1.7.1 due to insufficient input sanitization and output escaping on user supplied attributes. This makes it possible for authenticated attackers, with contributor-level access and above, to inject arbitrary web scripts in pages that will execute whenever a user accesses an injected page.",Word,3.1,"https://plugins.trac.wordpress.org/browser/martinus-partnersky-system/tags/1.7.1/martinus-pp.php#L266
+https://www.wordfence.com/threat-intel/vulnerabilities/id/6500b559-4c26-47e8-b131-100ece3ca3bd?source=cve"
+CVE-2025-7669,2025-07-19T03:15:23.727,6.1,MEDIUM,"The Avishi WP PayPal Payment Button plugin for WordPress is vulnerable to Cross-Site Request Forgery in all versions up to, and including, 2.0. This is due to missing or incorrect nonce validation on the 'avishi-wp-paypal-payment-button/index.php' page. This makes it possible for unauthenticated attackers to update settings and inject malicious web scripts via a forged request granted they can trick a site administrator into performing an action such as clicking on a link.",Word,2.8,"https://plugins.trac.wordpress.org/browser/avishi-wp-paypal-payment-button/trunk/index.php
+https://wordpress.org/plugins/avishi-wp-paypal-payment-button/
+https://www.wordfence.com/threat-intel/vulnerabilities/id/8416b394-28ae-41de-8784-2ae39f4d201f?source=cve"
+CVE-2025-7696,2025-07-19T05:15:22.093,9.8,CRITICAL,"The Integration for Pipedrive and Contact Form 7, WPForms, Elementor, Ninja Forms plugin for WordPress is vulnerable to PHP Object Injection in all versions up to, and including, 1.2.3 via deserialization of untrusted input within the verify_field_val() function. This makes it possible for unauthenticated attackers to inject a PHP Object. The additional presence of a POP chain in the Contact Form 7 plugin, which is likely to be used alongside, allows attackers to delete arbitrary files, leading to a denial of service or remote code execution when the wp-config.php file is deleted.",Word,3.9,"https://plugins.trac.wordpress.org/browser/integration-for-contact-form-7-and-pipedrive/tags/1.2.3/integration-for-contact-form-7-and-pipedrive.php#L953
+https://plugins.trac.wordpress.org/changeset/3329002/
+https://wordpress.org/plugins/integration-for-contact-form-7-and-pipedrive/#developers
+https://www.wordfence.com/threat-intel/vulnerabilities/id/6980112b-a555-47a4-b2d7-f0187d52fc63?source=cve"
+CVE-2025-7697,2025-07-19T05:15:22.377,9.8,CRITICAL,"The Integration for Google Sheets and Contact Form 7, WPForms, Elementor, Ninja Forms plugin for WordPress is vulnerable to PHP Object Injection in all versions up to, and including, 1.1.1 via deserialization of untrusted input within the verify_field_val() function. This makes it possible for unauthenticated attackers to inject a PHP Object. The additional presence of a POP chain in the Contact Form 7 plugin, which is likely to be used alongside, allows attackers to delete arbitrary files, leading to a denial of service or remote code execution when the wp-config.php file is deleted.",Word,3.9,"https://plugins.trac.wordpress.org/browser/integration-for-contact-form-7-and-google-sheets/tags/1.1.1/integration-for-contact-form-7-and-google-sheets.php#L923
+https://plugins.trac.wordpress.org/changeset/3329005/
+https://wordpress.org/plugins/integration-for-contact-form-7-and-google-sheets/#developers
+https://www.wordfence.com/threat-intel/vulnerabilities/id/a0146f17-35bd-45cf-b9c6-c4fce688efc2?source=cve"
+CVE-2025-6720,2025-07-19T06:15:24.127,5.3,MEDIUM,"The Vchasno Kasa plugin for WordPress is vulnerable to unauthorized loss of data due to a missing capability check on the clear_all_log() function in all versions up to, and including, 1.0.3. This makes it possible for unauthenticated attackers to clear log files.",Word,3.9,"https://plugins.trac.wordpress.org/browser/mrkv-vchasno-kasa/trunk/classes/mrkv-setup.php#L245
+https://plugins.trac.wordpress.org/changeset?sfp_email=&sfph_mail=&reponame=&old=3328827%40mrkv-vchasno-kasa&new=3328827%40mrkv-vchasno-kasa&sfp_email=&sfph_mail=
+https://www.wordfence.com/threat-intel/vulnerabilities/id/cd03483a-f46c-4e17-8b58-df87b0ad7fa3?source=cve"
+CVE-2025-6721,2025-07-19T06:15:24.307,5.3,MEDIUM,"The Vchasno Kasa plugin for WordPress is vulnerable to unauthorized access of data due to a missing capability check on the mrkv_vchasno_kasa_wc_do_metabox_action() function in all versions up to, and including, 1.0.3. This makes it possible for unauthenticated attackers to generate invoices for arbitrary orders.",Word,3.9,"https://plugins.trac.wordpress.org/browser/mrkv-vchasno-kasa/trunk/classes/mrkv-setup.php#L395
+https://plugins.trac.wordpress.org/changeset?sfp_email=&sfph_mail=&reponame=&old=3328827%40mrkv-vchasno-kasa&new=3328827%40mrkv-vchasno-kasa&sfp_email=&sfph_mail=
+https://www.wordfence.com/threat-intel/vulnerabilities/id/57ad3525-3257-4727-ba07-468bf13a94e2?source=cve"
+CVE-2025-38350,2025-07-19T07:15:22.043,N/A,N/A,"In the Linux kernel, the following vulnerability has been resolved:
+
+net/sched: Always pass notifications when child class becomes empty
+
+Certain classful qdiscs may invoke their classes' dequeue handler on an
+enqueue operation. This may unexpectedly empty the child qdisc and thus
+make an in-flight class passive via qlen_notify(). Most qdiscs do not
+expect such behaviour at this point in time and may re-activate the
+class eventually anyways which will lead to a use-after-free.
+
+The referenced fix commit attempted to fix this behavior for the HFSC
+case by moving the backlog accounting around, though this turned out to
+be incomplete since the parent's parent may run into the issue too.
+The following reproducer demonstrates this use-after-free:
+
+    tc qdisc add dev lo root handle 1: drr
+    tc filter add dev lo parent 1: basic classid 1:1
+    tc class add dev lo parent 1: classid 1:1 drr
+    tc qdisc add dev lo parent 1:1 handle 2: hfsc def 1
+    tc class add dev lo parent 2: classid 2:1 hfsc rt m1 8 d 1 m2 0
+    tc qdisc add dev lo parent 2:1 handle 3: netem
+    tc qdisc add dev lo parent 3:1 handle 4: blackhole
+
+    echo 1 | socat -u STDIN UDP4-DATAGRAM:127.0.0.1:8888
+    tc class delete dev lo classid 1:1
+    echo 1 | socat -u STDIN UDP4-DATAGRAM:127.0.0.1:8888
+
+Since backlog accounting issues leading to a use-after-frees on stale
+class pointers is a recurring pattern at this point, this patch takes
+a different approach. Instead of trying to fix the accounting, the patch
+ensures that qdisc_tree_reduce_backlog always calls qlen_notify when
+the child qdisc is empty. This solves the problem because deletion of
+qdiscs always involves a call to qdisc_reset() and / or
+qdisc_purge_queue() which ultimately resets its qlen to 0 thus causing
+the following qdisc_tree_reduce_backlog() to report to the parent. Note
+that this may call qlen_notify on passive classes multiple times. This
+is not a problem after the recent patch series that made all the
+classful qdiscs qlen_notify() handlers idempotent.",ESET,N/A,"https://git.kernel.org/stable/c/103406b38c600fec1fe375a77b27d87e314aea09
+https://git.kernel.org/stable/c/3b290923ad2b23596208c1e29520badef4356a43
+https://git.kernel.org/stable/c/7874c9c132e906a52a187d045995b115973c93fb
+https://git.kernel.org/stable/c/a44acdd9e84a211989ff4b9b92bf3545d8456ad5
+https://git.kernel.org/stable/c/a553afd91f55ff39b1e8a1c4989a29394c9e0472
+https://git.kernel.org/stable/c/e269f29e9395527bc00c213c6b15da04ebb35070
+https://git.kernel.org/stable/c/e9921b57dca05ac5f4fa1fa8e993d4f0ee52e2b7
+https://git.kernel.org/stable/c/f680a4643c6f71e758d8fe0431a958e9a6a4f59d"
+CVE-2025-6997,2025-07-19T09:15:23.477,6.4,MEDIUM,"The ThemeREX Addons plugin for WordPress is vulnerable to Stored Cross-Site Scripting via SVG File uploads in all versions up to, and including, 2.35.1.1 due to insufficient input sanitization and output escaping. The plugin’s SVG rendering routine calls the trx_addons_get_svg_from_file() function on an unvalidated 'svg' parameter supplied via the shortcode or Elementor widget settings, then outputs it via the trx_addons_show_layout() function.  Because there is no check on the URL’s origin, scheme, or the SVG content itself, authenticated attackers, with Contributor-level access and above, can supply a remote SVG and inject arbitrary web scripts in pages that will execute whenever a user accesses the SVG file.",Word,3.1,"https://themerex.net/wp/download_plugins/themerex-addons/
+https://www.wordfence.com/threat-intel/vulnerabilities/id/e1b19017-b2f0-4c3b-b263-1fbec6f1dce4?source=cve"
+CVE-2012-10019,2025-07-19T10:15:22.123,9.8,CRITICAL,The Front End Editor plugin for WordPress is vulnerable to arbitrary file uploads due to missing file type validation via the upload.php file in versions before 2.3. This makes it possible for unauthenticated attackers to upload arbitrary files on the affected sites server which may make remote code execution possible.,Word,3.9,"https://packetstormsecurity.com/files/132303/
+https://plugins.trac.wordpress.org/changeset?sfp_email=&sfph_mail=&reponame=&new=600233%40front-end-editor&old=569105%40front-end-editor&sfp_email=&sfph_mail=
+https://web.archive.org/web/20120712205339/https%3A//www.opensyscom.fr/Actualites/wordpress-plugins-front-end-editor-arbitrary-file-upload-vulnerability.html
+https://www.cybersecurity-help.cz/vdb/SB2012070701
+https://www.wordfence.com/threat-intel/vulnerabilities/id/f271c2e7-9d58-4dea-95d3-3ffc4ec7c3b2?source=cve"
+CVE-2015-10133,2025-07-19T10:15:23.227,7.2,HIGH,"The Subscribe to Comments for WordPress is vulnerable to Local File Inclusion in versions up to, and including, 2.1.2 via the Path to header value. This allows authenticated attackers, with administrative privileges and above, to include and execute arbitrary files on the server, allowing the execution of any PHP code in those files. This can be used to bypass access controls, obtain sensitive data, or achieve code execution in cases where images and other “safe” file types can be uploaded and included. This same function can also be used to execute arbitrary PHP code.",Word,1.2,"https://advisories.dxw.com/advisories/admin-only-local-file-inclusion-and-arbitrary-code-execution-in-subscribe-to-comments-2-1-2/
+https://packetstormsecurity.com/files/132694/
+https://plugins.trac.wordpress.org/changeset?sfp_email=&sfph_mail=&reponame=&old=1198281%40subscribe-to-comments&new=1198281%40subscribe-to-comments&sfp_email=&sfph_mail=
+https://seclists.org/fulldisclosure/2015/Jul/71
+https://www.wordfence.com/threat-intel/vulnerabilities/id/f92784a7-f2b3-47f8-b03f-4e234b57e40a?source=cve"
+CVE-2015-10134,2025-07-19T10:15:23.420,7.5,HIGH,"The Simple Backup plugin for WordPress is vulnerable to Arbitrary File Download in versions up to, and including, 2.7.10. via the download_backup_file function. This is due to a lack of capability checks and file type validation. This makes it possible for attackers to download sensitive files such as the wp-config.php file from the affected site.",Word,3.9,"https://packetstormsecurity.com/files/131919/
+https://www.wordfence.com/threat-intel/vulnerabilities/id/29482b70-0ff2-4bb1-9d41-9cffb83b5ad0?source=cve"
+CVE-2015-10135,2025-07-19T10:15:23.583,9.8,CRITICAL,The WPshop 2 – E-Commerce plugin for WordPress is vulnerable to arbitrary file uploads due to missing file type validation in the ajaxUpload function in versions before 1.3.9.6. This makes it possible for unauthenticated attackers to upload arbitrary files on the affected sites server which may make remote code execution possible.,Word,3.9,"https://g0blin.co.uk/g0blin-00036/
+https://github.com/espreto/wpsploit/blob/master/modules/exploits/unix/webapp/wp_wpshop_ecommerce_file_upload.rb
+https://plugins.trac.wordpress.org/changeset/1103406
+https://wordpress.org/plugins/wpshop/#developers
+https://www.wordfence.com/threat-intel/vulnerabilities/id/32e8224d-a653-48d7-a3f4-338fc0c1dc77?source=cve"
+CVE-2015-10136,2025-07-19T10:15:23.773,7.5,HIGH,"The GI-Media Library plugin for WordPress is vulnerable to Directory Traversal in versions before 3.0 via the 'fileid' parameter. This allows unauthenticated attackers to read the contents of arbitrary files on the server, which can contain sensitive information.",Word,3.9,"http://wordpressa.quantika14.com/repository/index.php?id=24
+https://github.com/espreto/wpsploit/blob/master/modules/auxiliary/scanner/http/wp_gimedia_library_file_read.rb
+https://plugins.trac.wordpress.org/changeset/1132677
+https://wordpress.org/plugins/gi-media-library/#developers
+https://wpscan.com/vulnerability/7754
+https://www.rapid7.com/db/modules/auxiliary/scanner/http/wp_gimedia_library_file_read/
+https://www.wordfence.com/threat-intel/vulnerabilities/id/2f80c3b9-5148-42eb-9137-9c538184cda3?source=cve"
+CVE-2016-15043,2025-07-19T10:15:23.940,9.8,CRITICAL,"The WP Mobile Detector plugin for WordPress is vulnerable to arbitrary file uploads due to missing file type validation in resize.php file in versions up to, and including, 3.5. This makes it possible for unauthenticated attackers to upload arbitrary files on the affected sites server which may make remote code execution possible.",Word,3.9,"https://aadityapurani.com/2016/06/03/mobile-detector-poc/
+https://blog.sucuri.net/2016/06/wp-mobile-detector-vulnerability-being-exploited-in-the-wild.html
+https://wordpress.org/plugins/wp-mobile-detector/changelog/
+https://wpscan.com/vulnerability/e4739674-eed4-417e-8c4d-2f5351b057cf
+https://www.pluginvulnerabilities.com/2016/05/31/aribitrary-file-upload-vulnerability-in-wp-mobile-detector/
+https://www.wordfence.com/threat-intel/vulnerabilities/id/5a5d5dbd-36f0-4886-adf8-045ec9c2e306?source=cve"
+CVE-2015-10138,2025-07-19T12:15:34.123,9.8,CRITICAL,"The Work The Flow File Upload plugin for WordPress is vulnerable to arbitrary file uploads due to missing file type validation in the jQuery-File-Upload-9.5.0 server and test files in versions up to, and including, 2.5.2. This makes it possible for unauthenticated attackers to upload arbitrary files on the affected sites server which may make remote code execution possible.",Word,3.9,"https://packetstormsecurity.com/files/131294/
+https://packetstormsecurity.com/files/131512/
+https://plugins.trac.wordpress.org/changeset?sfp_email=&sfph_mail=&reponame=&old=1127456%40work-the-flow-file-upload&new=1127456%40work-the-flow-file-upload&sfp_email=&sfph_mail=
+https://plugins.trac.wordpress.org/changeset?sfp_email=&sfph_mail=&reponame=&old=1127457%40work-the-flow-file-upload&new=1127457%40work-the-flow-file-upload&sfp_email=&sfph_mail=
+https://wpscan.com/vulnerability/a49a81a9-3d4b-4c8d-b719-fc513aceecc6
+https://www.acunetix.com/vulnerabilities/web/wordpress-plugin-work-the-flow-file-upload-arbitrary-file-upload-2-5-2/
+https://www.homelab.it/index.php/2015/04/04/wordpress-work-the-flow-file-upload-vulnerability/
+https://www.rapid7.com/db/modules/exploit/unix/webapp/wp_worktheflow_upload/
+https://www.wordfence.com/threat-intel/vulnerabilities/id/eb271cc8-01ec-45eb-9d6f-efc55c7c3923?source=cve"
+CVE-2015-10139,2025-07-19T12:15:35.127,8.8,HIGH,The WPLMS theme for WordPress is vulnerable to Privilege Escalation in versions 1.5.2 to 1.8.4.1 via the 'wp_ajax_import_data' AJAX action. This makes it possible for authenticated attackers to change otherwise restricted settings and potentially create a new accessible admin account.,Word,2.8,"https://packetstormsecurity.com/files/130291/
+https://themeforest.net/item/wplms-learning-management-system/6780226
+https://twitter.com/_wpscan_/status/564874637679820800?lang=ca
+https://wpscan.com/vulnerability/7785
+https://www.rapid7.com/db/modules/auxiliary/admin/http/wp_wplms_privilege_escalation/
+https://www.wordfence.com/threat-intel/vulnerabilities/id/6e0e8f5f-8216-4276-a810-860f9b52c447?source=cve"
+CVE-2025-38351,2025-07-19T12:15:35.383,N/A,N/A,"In the Linux kernel, the following vulnerability has been resolved:
+
+KVM: x86/hyper-v: Skip non-canonical addresses during PV TLB flush
+
+In KVM guests with Hyper-V hypercalls enabled, the hypercalls
+HVCALL_FLUSH_VIRTUAL_ADDRESS_LIST and HVCALL_FLUSH_VIRTUAL_ADDRESS_LIST_EX
+allow a guest to request invalidation of portions of a virtual TLB.
+For this, the hypercall parameter includes a list of GVAs that are supposed
+to be invalidated.
+
+However, when non-canonical GVAs are passed, there is currently no
+filtering in place and they are eventually passed to checked invocations of
+INVVPID on Intel / INVLPGA on AMD.  While AMD's INVLPGA silently ignores
+non-canonical addresses (effectively a no-op), Intel's INVVPID explicitly
+signals VM-Fail and ultimately triggers the WARN_ONCE in invvpid_error():
+
+  invvpid failed: ext=0x0 vpid=1 gva=0xaaaaaaaaaaaaa000
+  WARNING: CPU: 6 PID: 326 at arch/x86/kvm/vmx/vmx.c:482
+  invvpid_error+0x91/0xa0 [kvm_intel]
+  Modules linked in: kvm_intel kvm 9pnet_virtio irqbypass fuse
+  CPU: 6 UID: 0 PID: 326 Comm: kvm-vm Not tainted 6.15.0 #14 PREEMPT(voluntary)
+  RIP: 0010:invvpid_error+0x91/0xa0 [kvm_intel]
+  Call Trace:
+    vmx_flush_tlb_gva+0x320/0x490 [kvm_intel]
+    kvm_hv_vcpu_flush_tlb+0x24f/0x4f0 [kvm]
+    kvm_arch_vcpu_ioctl_run+0x3013/0x5810 [kvm]
+
+Hyper-V documents that invalid GVAs (those that are beyond a partition's
+GVA space) are to be ignored.  While not completely clear whether this
+ruling also applies to non-canonical GVAs, it is likely fine to make that
+assumption, and manual testing on Azure confirms ""real"" Hyper-V interprets
+the specification in the same way.
+
+Skip non-canonical GVAs when processing the list of address to avoid
+tripping the INVVPID failure.  Alternatively, KVM could filter out ""bad""
+GVAs before inserting into the FIFO, but practically speaking the only
+downside of pushing validation to the final processing is that doing so
+is suboptimal for the guest, and no well-behaved guest will request TLB
+flushes for non-canonical addresses.",Azure,N/A,"https://git.kernel.org/stable/c/2d4dea3f76510c0afe3f18c910f647b816f7d566
+https://git.kernel.org/stable/c/fa787ac07b3ceb56dd88a62d1866038498e96230"
