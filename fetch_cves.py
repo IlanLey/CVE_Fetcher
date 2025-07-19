@@ -8,6 +8,9 @@ KEYWORDS = [
     # Communication / Collaboration
     "Zoom", "Slack", "Microsoft Teams", "Skype", "Google Meet", "Webex", "Discord",
 
+    # Web Browsers (Critical for corporate security)
+    "Google Chrome", "Microsoft Edge", "Mozilla Firefox", "Internet Explorer", "Safari",
+
     # Productivity Suites (balanced specificity)
     "Microsoft Office", "Microsoft Word", "Microsoft Excel", "Microsoft PowerPoint", "Microsoft Outlook",
     "Google Workspace", "Google Docs", "Google Sheets", "Gmail",
@@ -21,18 +24,20 @@ KEYWORDS = [
     # Endpoint Protection / Antivirus / EDR
     "CrowdStrike", "CrowdStrike Falcon", "SentinelOne", "Sophos", "McAfee", "Symantec",
     "Bitdefender", "Trend Micro", "Carbon Black", "ESET NOD32", "ESET Internet Security", "ESET Endpoint",
+    "Windows Defender", "Microsoft Defender",
 
     # Network Security / Firewalls
     "Palo Alto", "Palo Alto Networks", "Fortinet", "FortiGate", "Cisco ASA", "Cisco Umbrella",
-    "SonicWall", "Check Point", "pfSense", "Akamai",
+    "SonicWall", "Check Point", "pfSense", "Akamai", "Cloudflare",
 
     # SIEM / Monitoring / Logging
     "Splunk", "Elasticsearch", "Logstash", "Kibana", "Graylog", "IBM QRadar",
     "ArcSight", "Sumo Logic", "LogRhythm", "Google Chronicle", "BindPlane",
+    "Microsoft Sentinel",
 
     # Identity & Access Management
     "Okta", "Duo Security", "Ping Identity", "Microsoft Active Directory", "Azure Active Directory",
-    "CyberArk", "Silverfort",
+    "CyberArk", "Silverfort", "Auth0",
 
     # DLP / SASE / Cloud Security
     "Netskope", "Prisma Cloud", "Zscaler", "Forcepoint", "Lookout",
@@ -46,34 +51,32 @@ KEYWORDS = [
     # Cloud Platforms
     "AWS", "Amazon Web Services", "Microsoft Azure", "Google Cloud", "Oracle Cloud",
 
-    # DevOps / CI-CD
+    # DevOps / CI-CD (Enterprise focused)
     "Jenkins", "GitLab", "GitHub", "Bitbucket", "Docker", "Kubernetes",
-    "Ansible", "Terraform", "ArgoCD", "HashiCorp Vault",
+    "Ansible", "Terraform", "HashiCorp Vault",
 
-    # Programming Languages & Runtimes
-    "Java", "JavaScript", "Python", "Node.js", "PHP", "Ruby", "Golang", "Rust",
-    "C++", "C#", ".NET", "TypeScript", "Swift", "Kotlin", "Scala",
+    # Programming Languages & Runtimes (Corporate relevant)
+    "Java", "JavaScript", "Python", "Node.js", ".NET", "C#",
 
-    # Git Libraries & Version Control
-    "GitHub Actions", "GitLab CI", "libgit2", "JGit", "GitPython",
-    "Subversion", "SVN", "Mercurial",
+    # Enterprise PHP Applications (instead of generic "PHP")
+    "WordPress", "Drupal", "Joomla", "Magento", "PrestaShop", "phpMyAdmin",
 
-    # Web Frameworks & Libraries
-    "React", "Angular", "Vue.js", "Express.js", "Django", "Flask", "Spring Boot",
-    "Laravel", "Ruby on Rails", "ASP.NET", "jQuery", "Bootstrap",
+    # Version Control (Corporate tools)
+    "GitHub Actions", "GitLab CI", "Azure DevOps",
+
+    # Web Frameworks & Libraries (Enterprise focused)
+    "Spring Boot", "ASP.NET", "Django", "React", "Angular",
 
     # Package Managers & Build Tools
-    "npm", "Yarn", "Maven", "Gradle", "pip", "Composer", "NuGet", "RubyGems",
-    "Webpack", "Babel", "Vite", "Rollup",
+    "Maven", "Gradle", "npm", "NuGet",
 
-    # Development Tools & IDEs
-    "Visual Studio Code", "IntelliJ IDEA", "Eclipse", "Xcode", "Android Studio",
-    "Sublime Text", "Atom", "Vim", "Emacs",
+    # Development Tools & IDEs (Corporate relevant)
+    "Visual Studio Code", "Visual Studio", "IntelliJ IDEA", "Eclipse",
 
     # Web Servers / Reverse Proxies
     "Apache HTTP", "Nginx", "Microsoft IIS", "HAProxy",
 
-    # Databases
+    # Databases (Enterprise focused)
     "MySQL", "PostgreSQL", "MongoDB", "Oracle Database", "SQL Server", "Redis", "Elasticsearch",
 
     # Backup & Recovery
@@ -85,8 +88,14 @@ KEYWORDS = [
     # Ticketing / ITSM
     "ServiceNow", "Jira", "Zendesk", "Freshservice",
 
-    # Other popular enterprise tools
-    "Ivanti", "SolarWinds", "Citrix", "TeamViewer"
+    # Enterprise Software & ERP
+    "SAP", "Oracle ERP", "Microsoft Dynamics", "Salesforce",
+
+    # Virtualization & Infrastructure
+    "VMware", "Hyper-V", "Citrix XenApp", "Citrix XenDesktop",
+
+    # Other critical enterprise tools
+    "Ivanti", "SolarWinds", "TeamViewer", "Adobe Acrobat", "Adobe Flash"
 ]
 
 def fetch_daily_cves():

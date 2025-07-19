@@ -1,4 +1,5 @@
 CVE ID,Published Date,CVSS,Severity,Description,Affected Products,Exploitability Score,References
+CVE-2025-47158,2025-07-18T17:15:31.363,9.0,CRITICAL,Authentication bypass by assumed-immutable data in Azure DevOps allows an unauthorized attacker to elevate privileges over a network.,Azure DevOps,2.2,https://msrc.microsoft.com/update-guide/vulnerability/CVE-2025-47158
 CVE-2025-7800,2025-07-18T19:15:25.820,3.5,LOW,"A vulnerability classified as problematic was found in cgpandey hotelmis up to c572198e6c4780fccc63b1d3e8f3f72f825fc94e. This vulnerability affects unknown code of the file admin.php of the component HTTP GET Request Handler. The manipulation of the argument Search leads to cross site scripting. The attack can be initiated remotely. This product is using a rolling release to provide continious delivery. Therefore, no version details for affected nor updated releases are available.",PHP,2.1,"https://vuldb.com/?ctiid.316864
 https://vuldb.com/?id.316864
 https://vuldb.com/?submit.616838"
@@ -60,15 +61,46 @@ https://phpgurukul.com/
 https://vuldb.com/?ctiid.316920
 https://vuldb.com/?id.316920
 https://vuldb.com/?submit.616822"
-CVE-2015-10138,2025-07-19T12:15:34.123,9.8,CRITICAL,"The Work The Flow File Upload plugin for WordPress is vulnerable to arbitrary file uploads due to missing file type validation in the jQuery-File-Upload-9.5.0 server and test files in versions up to, and including, 2.5.2. This makes it possible for unauthenticated attackers to upload arbitrary files on the affected sites server which may make remote code execution possible.",jQuery,3.9,"https://packetstormsecurity.com/files/131294/
-https://packetstormsecurity.com/files/131512/
-https://plugins.trac.wordpress.org/changeset?sfp_email=&sfph_mail=&reponame=&old=1127456%40work-the-flow-file-upload&new=1127456%40work-the-flow-file-upload&sfp_email=&sfph_mail=
-https://plugins.trac.wordpress.org/changeset?sfp_email=&sfph_mail=&reponame=&old=1127457%40work-the-flow-file-upload&new=1127457%40work-the-flow-file-upload&sfp_email=&sfph_mail=
-https://wpscan.com/vulnerability/a49a81a9-3d4b-4c8d-b719-fc513aceecc6
-https://www.acunetix.com/vulnerabilities/web/wordpress-plugin-work-the-flow-file-upload-arbitrary-file-upload-2-5-2/
-https://www.homelab.it/index.php/2015/04/04/wordpress-work-the-flow-file-upload-vulnerability/
-https://www.rapid7.com/db/modules/exploit/unix/webapp/wp_worktheflow_upload/
-https://www.wordfence.com/threat-intel/vulnerabilities/id/eb271cc8-01ec-45eb-9d6f-efc55c7c3923?source=cve"
+CVE-2025-38351,2025-07-19T12:15:35.383,N/A,N/A,"In the Linux kernel, the following vulnerability has been resolved:
+
+KVM: x86/hyper-v: Skip non-canonical addresses during PV TLB flush
+
+In KVM guests with Hyper-V hypercalls enabled, the hypercalls
+HVCALL_FLUSH_VIRTUAL_ADDRESS_LIST and HVCALL_FLUSH_VIRTUAL_ADDRESS_LIST_EX
+allow a guest to request invalidation of portions of a virtual TLB.
+For this, the hypercall parameter includes a list of GVAs that are supposed
+to be invalidated.
+
+However, when non-canonical GVAs are passed, there is currently no
+filtering in place and they are eventually passed to checked invocations of
+INVVPID on Intel / INVLPGA on AMD.  While AMD's INVLPGA silently ignores
+non-canonical addresses (effectively a no-op), Intel's INVVPID explicitly
+signals VM-Fail and ultimately triggers the WARN_ONCE in invvpid_error():
+
+  invvpid failed: ext=0x0 vpid=1 gva=0xaaaaaaaaaaaaa000
+  WARNING: CPU: 6 PID: 326 at arch/x86/kvm/vmx/vmx.c:482
+  invvpid_error+0x91/0xa0 [kvm_intel]
+  Modules linked in: kvm_intel kvm 9pnet_virtio irqbypass fuse
+  CPU: 6 UID: 0 PID: 326 Comm: kvm-vm Not tainted 6.15.0 #14 PREEMPT(voluntary)
+  RIP: 0010:invvpid_error+0x91/0xa0 [kvm_intel]
+  Call Trace:
+    vmx_flush_tlb_gva+0x320/0x490 [kvm_intel]
+    kvm_hv_vcpu_flush_tlb+0x24f/0x4f0 [kvm]
+    kvm_arch_vcpu_ioctl_run+0x3013/0x5810 [kvm]
+
+Hyper-V documents that invalid GVAs (those that are beyond a partition's
+GVA space) are to be ignored.  While not completely clear whether this
+ruling also applies to non-canonical GVAs, it is likely fine to make that
+assumption, and manual testing on Azure confirms ""real"" Hyper-V interprets
+the specification in the same way.
+
+Skip non-canonical GVAs when processing the list of address to avoid
+tripping the INVVPID failure.  Alternatively, KVM could filter out ""bad""
+GVAs before inserting into the FIFO, but practically speaking the only
+downside of pushing validation to the final processing is that doing so
+is suboptimal for the guest, and no well-behaved guest will request TLB
+flushes for non-canonical addresses.",Hyper-V,N/A,"https://git.kernel.org/stable/c/2d4dea3f76510c0afe3f18c910f647b816f7d566
+https://git.kernel.org/stable/c/fa787ac07b3ceb56dd88a62d1866038498e96230"
 CVE-2025-7817,2025-07-19T12:15:35.497,3.5,LOW,A vulnerability has been found in PHPGurukul Apartment Visitors Management System 1.0 and classified as problematic. Affected by this vulnerability is an unknown functionality of the file /bwdates-reports.php of the component HTTP POST Request Handler. The manipulation of the argument visname leads to cross site scripting. The attack can be launched remotely. The exploit has been disclosed to the public and may be used.,PHP,2.1,"https://github.com/HieuGITLAB/my-cves/issues/5
 https://phpgurukul.com/
 https://vuldb.com/?ctiid.316921
