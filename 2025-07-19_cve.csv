@@ -10,20 +10,6 @@ https://vuldb.com/?submit.616740"
 CVE-2025-7803,2025-07-18T20:15:25.257,3.5,LOW,"A vulnerability was found in descreekert wx-discuz up to 12bd4745c63ec203cb32119bf77ead4a923bf277. It has been classified as problematic. This affects the function validToken of the file /wx.php. The manipulation of the argument echostr leads to cross site scripting. It is possible to initiate the attack remotely. This product takes the approach of rolling releases to provide continious delivery. Therefore, version details for affected and updated releases are not available.",PHP,2.1,"https://vuldb.com/?ctiid.316869
 https://vuldb.com/?id.316869
 https://vuldb.com/?submit.616885"
-CVE-2025-7806,2025-07-18T21:15:25.153,8.8,HIGH,A vulnerability classified as critical was found in Tenda FH451 1.0.0.9. This vulnerability affects the function fromSafeClientFilter of the file /goform/SafeClientFilter. The manipulation of the argument Go/page leads to stack-based buffer overflow. The attack can be initiated remotely. The exploit has been disclosed to the public and may be used.,Go,2.8,"https://github.com/panda666-888/vuls/blob/main/tenda/fh451/fromSafeClientFilter_Go.md
-https://github.com/panda666-888/vuls/blob/main/tenda/fh451/fromSafeClientFilter_page.md
-https://vuldb.com/?ctiid.316882
-https://vuldb.com/?id.316882
-https://vuldb.com/?submit.616348
-https://vuldb.com/?submit.616349
-https://www.tenda.com.cn/"
-CVE-2025-7807,2025-07-18T21:15:25.447,8.8,HIGH,"A vulnerability, which was classified as critical, has been found in Tenda FH451 1.0.0.9. This issue affects the function fromSafeUrlFilter of the file /goform/SafeUrlFilter. The manipulation of the argument Go/page leads to stack-based buffer overflow. The attack may be initiated remotely. The exploit has been disclosed to the public and may be used.",Go,2.8,"https://github.com/panda666-888/vuls/blob/main/tenda/fh451/fromSafeUrlFilter_Go.md
-https://github.com/panda666-888/vuls/blob/main/tenda/fh451/fromSafeUrlFilter_page.md
-https://vuldb.com/?ctiid.316883
-https://vuldb.com/?id.316883
-https://vuldb.com/?submit.616350
-https://vuldb.com/?submit.616352
-https://www.tenda.com.cn/"
 CVE-2025-7814,2025-07-18T22:15:23.970,7.3,HIGH,A vulnerability classified as critical was found in code-projects Food Ordering Review System 1.0. This vulnerability affects unknown code of the file /pages/signup_function.php. The manipulation of the argument fname leads to sql injection. The attack can be initiated remotely. The exploit has been disclosed to the public and may be used. Other parameters might be affected as well.,PHP,3.9,"https://code-projects.org/
 https://github.com/n0name-yang/myCVE/issues/4
 https://vuldb.com/?ctiid.316918
