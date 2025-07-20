@@ -54,7 +54,7 @@ KEYWORDS = [
     "ServiceNow", "SharePoint",
 
     # Critical Programming Runtimes
-    "Java", ".NET", "Python",
+    "Oracle Java", "Spring Framework", "Apache Struts", ".NET", "Python",
 
     # AI Platforms & Agents
     "OpenAI", "ChatGPT", "Claude", "Anthropic",
